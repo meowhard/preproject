@@ -6,5 +6,10 @@ import java.util.List;
 
 public interface CarService {
 
-    List<Car> listCars(Car car);
+    /**
+     * Возвращает необходимое количество автомобилей из базы
+     * @param count кол-во автомобилей
+     * @return список автомобилей
+     */
+    List<Car> read(int count);
 }

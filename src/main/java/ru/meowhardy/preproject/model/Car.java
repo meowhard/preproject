@@ -1,7 +1,6 @@
 package ru.meowhardy.preproject.model;
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 @Entity
 @Table(name = "cars")
 public class Car {
@@ -19,13 +18,13 @@ public class Car {
     @Column(name = "year")
     private int year;
 
+    public Car() {
+    }
+
     public Car(String manufacturer, String model, int year) {
         this.manufacturer = manufacturer;
         this.model = model;
         this.year = year;
-    }
-
-    public Car() {
     }
 
     public Long getId() {

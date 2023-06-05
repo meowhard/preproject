@@ -31,7 +31,6 @@ public class CarController {
                        @RequestParam(name = "sortBy", required = false, defaultValue = "id")  String sortBy,
                        Model model) {
         String sort = env.getProperty(sortBy);
-        System.out.println(sort);
 
         if (Objects.equals(sort, "false")) {
             throw new SortException();

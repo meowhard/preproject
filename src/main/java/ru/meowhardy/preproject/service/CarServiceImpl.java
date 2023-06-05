@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import ru.meowhardy.preproject.dao.CarDao;
 import ru.meowhardy.preproject.model.Car;
 import ru.meowhardy.preproject.model.SortConfig;
-
 import java.util.List;
 
 @Service

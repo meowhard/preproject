@@ -12,7 +12,6 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         show_sql: true
 
-maxValue: 3
 server:
   error:
     include-message: always
@@ -21,5 +20,5 @@ sort:
   enabled:
     - id
     - manufacturer
-    - model
     - year
+  maxValue: 3

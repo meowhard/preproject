@@ -8,6 +8,4 @@ import ru.meowhardy.preproject.model.Car;
 import java.util.List;
 
 public interface CarDao extends JpaRepository<Car, Integer>{
-
-//    public List<Car> findAllBy(int count, String sortBy);
 }

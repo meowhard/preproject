@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.meowhardy.preproject.model.SortConfig;
 import ru.meowhardy.preproject.model.SortException;
-import ru.meowhardy.preproject.service.CarServiceImpl;
+import ru.meowhardy.preproject.service.CarService;
 
 @RequestMapping("/cars")
 @Controller
@@ -18,7 +18,7 @@ public class CarController {
     private SortConfig sortConfig;
 
     @Autowired
-    private CarServiceImpl carService;
+    private CarService carService;
 
     @GetMapping()
     public String cars(@RequestParam(name = "count", required = false, defaultValue = "0") Integer count,

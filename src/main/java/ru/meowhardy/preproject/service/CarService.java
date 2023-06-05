@@ -10,13 +10,13 @@ import ru.meowhardy.preproject.model.SortConfig;
 import java.util.List;
 
 @Service
-public class CarServiceImpl{
+public class CarService {
 
     @Autowired
     private CarDao carDao;
 
     @Autowired
-    private SortConfig maxValue;
+    private SortConfig sortConfig;
 
     /**
      * Возвращает список автомобилей из базы согласно параметрам HTTP запроса
@@ -26,11 +26,7 @@ public class CarServiceImpl{
      */
     public List<Car> findCars(Integer count, String sortBy) {
 
-        if (count >= maxValue.getMaxValue()) {
-            count = maxValue.getMaxValue();
-        }
-
-        if (count == 0 || count >= maxValue.getMaxValue() ) {
+        if (count == 0 || count >= sortConfig.getMaxValue() ) {
             count = Integer.MAX_VALUE;
         }
 

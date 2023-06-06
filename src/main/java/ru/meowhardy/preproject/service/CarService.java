@@ -6,7 +6,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import ru.meowhardy.preproject.dao.CarDao;
 import ru.meowhardy.preproject.model.Car;
-import ru.meowhardy.preproject.model.SortConfig;
+import ru.meowhardy.preproject.config.CarConfiguration;
 import java.util.List;
 
 @Service
@@ -16,7 +16,7 @@ public class CarService {
     private CarDao carDao;
 
     @Autowired
-    private SortConfig sortConfig;
+    private CarConfiguration carConfiguration;
 
     /**
      * Возвращает список автомобилей из базы согласно параметрам HTTP запроса
@@ -26,7 +26,7 @@ public class CarService {
      */
     public List<Car> findCars(Integer count, String sortBy) {
 
-        if (count == 0 || count >= sortConfig.getMaxValue() ) {
+        if (count == 0 || count >= carConfiguration.getMaxValue() ) {
             count = Integer.MAX_VALUE;
         }
 

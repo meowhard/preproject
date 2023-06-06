@@ -16,8 +16,8 @@ server:
   error:
     include-message: always
 
-sort:
-  enabled:
+car:
+  sortEnabled:
     - id
     - manufacturer
     - year

@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.meowhardy.preproject.model.SortConfig;
-import ru.meowhardy.preproject.model.SortException;
+import ru.meowhardy.preproject.config.CarConfiguration;
+import ru.meowhardy.preproject.exception.SortException;
 import ru.meowhardy.preproject.service.CarService;
 
 @RequestMapping("/cars")
@@ -15,7 +15,7 @@ import ru.meowhardy.preproject.service.CarService;
 public class CarController {
 
     @Autowired
-    private SortConfig sortConfig;
+    private CarConfiguration carConfiguration;
 
     @Autowired
     private CarService carService;
@@ -26,7 +26,7 @@ public class CarController {
                        @RequestParam(name = "sortBy", required = false, defaultValue = "id")  String sortBy,
                        Model model) {
 
-        if (!sortConfig.getEnabled().contains(sortBy)) {
+        if (!carConfiguration.getSortEnabled().contains(sortBy)) {
             throw new SortException();
         }
 

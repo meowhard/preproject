@@ -1,4 +1,4 @@
-package ru.meowhardy.preproject.model;
+package ru.meowhardy.preproject.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -6,12 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import java.util.List;
 
 @Configuration
-@ConfigurationProperties(prefix = "sort")
-public class SortConfig {
+@ConfigurationProperties(prefix = "car")
+public class CarConfiguration {
 
     private int maxValue;
 
-    private List<String> enabled;
+    private List<String> sortEnabled;
 
     public int getMaxValue() {
         return maxValue;
@@ -21,11 +21,11 @@ public class SortConfig {
         this.maxValue = maxValue;
     }
 
-    public List<String> getEnabled() {
-        return enabled;
+    public List<String> getSortEnabled() {
+        return sortEnabled;
     }
 
-    public void setEnabled(List<String> enabled) {
-        this.enabled = enabled;
+    public void setSortEnabled(List<String> sortEnabled) {
+        this.sortEnabled = sortEnabled;
     }
 }
